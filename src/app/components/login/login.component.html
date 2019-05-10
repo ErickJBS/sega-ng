@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<div class="container"
+  fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+  <mat-card fxFlex="40">
+    <mat-card-header>
+      <mat-card-title>Inicio de sesión</mat-card-title>
+      <mat-card-subtitle>Universidad Autónoma de Chihuahua</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="login-form">
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Usuario">
+        </mat-form-field>
+
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Contraseña">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
