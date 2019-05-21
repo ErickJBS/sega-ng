@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
   ) { }
 
   async canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-    this.router.navigate(['/login']);
-    return false;
+    //this.router.navigate(['/login']);
+    return true;
   }
 }

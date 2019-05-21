@@ -13,9 +13,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { MatTabsModule, MatSidenavModule } from '@angular/material';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { KardexComponent } from './components/kardex/kardex.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { AttendanceComponent } from './components/attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,10 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     MenuComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    KardexComponent,
+    ScheduleComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,
