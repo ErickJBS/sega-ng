@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
 import { User } from '@models/user';
 
 @Injectable({
@@ -19,22 +19,15 @@ export class AuthService {
     this.user = this.currentUserSubject.asObservable();
   }
 
-  async singIn(user: string, password: string) {
+  signIn(user: string, password: string) {
     const url = `${environment.server}/login`;
-    this.http.post<any>(url, { user, password })
-      .subscribe(
-        data => {
-          if (data && data.token) {
-            this.setToken(data.token);
-            this.router.navigate(['/']);
-          } else {
-            console.log('Usuario o contraseña incorrectos');
-          }
-        },
-        error => {
-          console.log("Error", error);
+    return this.http.post<any>(url, { user, password })
+      .pipe(map(data => {
+        if (data && data.token) {
+          this.setToken(data.token);
         }
-      );
+        return data;
+      }))
   }
 
   async signOut() {
