@@ -12,9 +12,14 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { MatTabsModule, MatSidenavModule } from '@angular/material';
+import { AuthService } from '@services/auth.service';
+import { DataService } from '@services/data.service';
+import { AuthGuardService } from '@services/auth-guard.service';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -57,9 +62,17 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSelectModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    DataService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,7 @@
     "target": "es5",
     "paths": {
       "@app/*": ["app/*"],
+      "@models/*": ["app/models/*"],
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
       "@environments/*": ["environments/*"]
