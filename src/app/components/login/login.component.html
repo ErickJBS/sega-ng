@@ -1,9 +1,8 @@
-<div class="container"
-  fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"
-  fxLayoutAlign.gt-md="space-around center"
-  fxLayoutGap="10px" fxLayoutGap.xs="0">
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="center">
 
-  <mat-card fxFlex="40">
+  <mat-card class="login-card" fxFlex.gt-sm="30%">
+    <img mat-card-image class="login-logo" src="assets/img/logo_uach.png" />
+
     <mat-card-header>
       <mat-card-title>Inicio de sesión</mat-card-title>
       <mat-card-subtitle>Universidad Autónoma de Chihuahua</mat-card-subtitle>
@@ -12,15 +11,19 @@
     <mat-card-content>
       <form class="login-form">
         <mat-form-field class="login-input">
-          <input matInput placeholder="Usuario">
+          <input type="text" name="user" matInput placeholder="Usuario" [(ngModel)]="user">
         </mat-form-field>
 
         <mat-form-field class="login-input">
-          <input matInput placeholder="Contraseña">
+          <input type="password" name="password" matInput placeholder="Contraseña" [(ngModel)]="password">
         </mat-form-field>
+
+        <mat-card-actions>
+          <button type="submit" mat-stroked-button (click)="onLogin()" color="primary">Iniciar sesión</button>
+        </mat-card-actions>
+
       </form>
     </mat-card-content>
 
   </mat-card>
-
 </div>
