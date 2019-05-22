@@ -1,3 +1,10 @@
-<p>
-  menu works!
-</p>
+<button mat-button [matMenuTriggerFor]="kardexMenu">Kardex</button>
+
+<mat-menu #kardexMenu="matMenu" yPosition="above">
+
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="scheduleMenu">Horario</button>
+<mat-menu #scheduleMenu="matMenu" yPosition="above">
+
+</mat-menu>

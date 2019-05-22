@@ -21,6 +21,13 @@ import { MatInputModule } from '@angular/material/input';
 import { KardexComponent } from './components/kardex/kardex.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
+import { MatMenuModule} from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatTableModule } from '@angular/material/table'; 
+import { MatListModule } from '@angular/material/list'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +50,14 @@ import { AttendanceComponent } from './components/attendance/attendance.componen
     MatCardModule,
     MatFormFieldModule,
     FlexLayoutModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatTableModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
