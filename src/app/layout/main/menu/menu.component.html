@@ -1,10 +1,5 @@
-<button mat-button [matMenuTriggerFor]="kardexMenu">Kardex</button>
+<button mat-button [routerLink]="['/kardex']" [matMenuTriggerFor]="kardexMenu">Kardex</button>
+<mat-menu #kardexMenu="matMenu" yPosition="above"></mat-menu>
 
-<mat-menu #kardexMenu="matMenu" yPosition="above">
-
-</mat-menu>
-
-<button mat-button [matMenuTriggerFor]="scheduleMenu">Horario</button>
-<mat-menu #scheduleMenu="matMenu" yPosition="above">
-
-</mat-menu>
+<button mat-button [routerLink]="['/schedule']" [matMenuTriggerFor]="scheduleMenu">Horario</button>
+<mat-menu #scheduleMenu="matMenu" yPosition="above"></mat-menu>
