@@ -1,20 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Kardex } from '@models/kardex';
 
 export interface Classifier {
   value: string;
   viewValue: string;
 }
 
-export interface Kardex{
-  semester: number;
-  name: string;
-  grade: number;
-}
-
 const ELEMENT_DATA: Kardex[] = [
-  {semester: 1, name: 'Algortimo', grade: 7.97},
-  {semester: 2, name: 'Cálculo', grade: 8.68},
-  {semester: 3, name: 'Estructura de Datos', grade: 9.67}
+  {student_id:'a311012', semester: 1, subject_id: 'ISAD', grade: 7.97},
+  {student_id:'a311012', semester: 2, subject_id: 'SDAS', grade: 8.68},
+  {student_id:'a311012', semester: 3, subject_id: 'ASD de Datos', grade: 9.67}
 ];
 
 @Component({
@@ -30,7 +25,7 @@ export class KardexComponent implements OnInit {
     {value: 'subject-2', viewValue: 'Materia'}
   ];
 
-  displayedColumns: string[] = ['semester', 'name', 'grade'];
+  displayedColumns: string[] = ['student_id','semester', 'subject_id', 'grade'];
   dataSource = ELEMENT_DATA;
 
   constructor() { }

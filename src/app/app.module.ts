@@ -66,7 +66,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSnackBarModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AuthService,
