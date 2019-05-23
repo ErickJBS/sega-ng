@@ -20,21 +20,21 @@ export class AuthService {
   }
 
   signIn(user: string, password: string) {
-    const url = `${environment.server}/login`;
+    const url = `${environment.apiServer}/login`;
     return this.http.post<any>(url, { user, password })
       .pipe(map(data => {
         if (data && data.token) {
-          this.setToken(data.token);
+          this.setToken(data);
         }
         return data;
       }))
   }
 
-  async signOut() {
+  signOut(): void {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    return this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 
   getUser() {
@@ -47,13 +47,15 @@ export class AuthService {
     }
     else {
       if (localStorage.getItem('currentUser')) {
-        return JSON.parse(localStorage.getItem("token"));
+        return JSON.parse(localStorage.getItem('currentUser'));
       }
       return null;
     }
   }
 
-  setToken(token: string) {
+  setToken(token: any) {
+    const expiration = new Date().getTime() + 3600000;
+    token.expirationTime = expiration;
     this.token = token;
     localStorage.setItem('currentUser', JSON.stringify(token));
   }

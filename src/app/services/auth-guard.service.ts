@@ -12,7 +12,11 @@ export class AuthGuardService implements CanActivate {
   ) { }
 
   async canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-    //this.router.navigate(['/login']);
+    const token = this.auth.getToken();
+    if (!token || new Date(token.expirationTime) < new Date()) {
+      this.router.navigate(['/login']);
+      return false;
+    }
     return true;
   }
 }
