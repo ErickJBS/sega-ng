@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  token: string;
+  token: any;
 
   constructor(private router: Router, private http: HttpClient) {
   }

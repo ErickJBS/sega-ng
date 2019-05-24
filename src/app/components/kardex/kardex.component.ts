@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Kardex } from '@models/kardex';
+import { DataService } from '@services/data.service';
 
-export interface Classifier {
+/*export interface Classifier {
   value: string;
   viewValue: string;
-}
-
-const ELEMENT_DATA: Kardex[] = [
-  {student_id:'a311012', semester: 1, subject_id: 'ISAD', grade: 7.97},
-  {student_id:'a311012', semester: 2, subject_id: 'SDAS', grade: 8.68},
-  {student_id:'a311012', semester: 3, subject_id: 'ASD de Datos', grade: 9.67}
-];
+}*/
 
 @Component({
   selector: 'app-kardex',
@@ -19,19 +13,37 @@ const ELEMENT_DATA: Kardex[] = [
 })
 export class KardexComponent implements OnInit {
 
-  classifiers: Classifier[] = [
-    {value: 'semester-0', viewValue: 'Semestre'},
-    {value: 'grade-1', viewValue: 'Calificacion'},
-    {value: 'subject-2', viewValue: 'Materia'}
-  ];
+  kardex: any[];
+  average: any;
+  displayedColumns: string[] = ['semester', 'subject_name', 'grade'];
 
-  displayedColumns: string[] = ['student_id','semester', 'subject_id', 'grade'];
-  dataSource = ELEMENT_DATA;
+  /*classifiers: Classifier[] = [
+    { value: 'semester-0', viewValue: 'Semestre' },
+    { value: 'grade-1', viewValue: 'Calificacion' },
+    { value: 'subject-2', viewValue: 'Materia' }
+  ];*/
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.onLoad();
   }
 
+  onLoad() {
+    console.log('[KardexComponent][onLoad]');
+    this.data.getStudentKardex().subscribe(kardex => {
+      this.kardex = kardex;
+      this.average = this.getAverage();
+    });
+  }
+
+  getAverage(): number {
+    if (!this.kardex) return;
+    let sum = 0;
+    for (let i of this.kardex) {
+      sum += i.grade;
+    }
+    return sum / this.kardex.length;
+  }
 
 }

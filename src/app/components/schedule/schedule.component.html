@@ -3,55 +3,14 @@
 </mat-card>
 
 <mat-list>
-  <h3 mat-subheader>Lunes</h3>
-  <mat-list-item *ngFor="let monday of mondays">
-    <mat-icon mat-list-icon class="monday">brightness_1</mat-icon>
-    <h4 mat-line>{{monday.name}}</h4>
-    <p mat-line> {{monday.classroom}} </p>    
-    <button mat-stroked-button color="primary" class="button">11:00</button>
-    <button mat-stroked-button color="primary"class="button">12:00</button>
-
+  <!--h3 mat-subheader>Sábado</h3-->
+  <mat-list-item *ngFor="let item of schedule">
+    <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+    <h4 mat-line>{{ item.subject_name }}</h4>
+    <p mat-line> {{ item.salon_id }} </p>
+    <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+    <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
   </mat-list-item>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Martes</h3>
-  <mat-list-item *ngFor="let tuesday of tuesdays">
-    <mat-icon mat-list-icon class="tuesday">brightness_1</mat-icon>
-    <h4 mat-line>{{tuesday.name}}</h4>
-    <p mat-line> {{tuesday.classroom}} </p>
-    <button mat-stroked-button color="primary" class="button">11:00</button>
-    <button mat-stroked-button color="primary"class="button">12:00</button>
-
-  </mat-list-item>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Miércoles</h3>
-  <mat-list-item *ngFor="let wednesday of wednesdays">
-    <mat-icon mat-list-icon class="wednesday">brightness_1</mat-icon>
-    <h4 mat-line>{{wednesday.name}}</h4>
-    <p mat-line> {{wednesday.classroom}} </p>
-    <button mat-stroked-button color="primary" class="button">11:00</button>
-    <button mat-stroked-button color="primary"class="button">12:00</button>
-
-  </mat-list-item>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Jueves</h3>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Viernes</h3>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Sábado</h3>
-
-  <mat-divider></mat-divider>
-
-  <h3 mat-subheader>Domingo</h3>
-  
+  <!--mat-divider></mat-divider-->
 
 </mat-list>
