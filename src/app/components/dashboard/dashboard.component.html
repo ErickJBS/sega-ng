@@ -1,12 +1,23 @@
 <div align="center" class="component">
-  <mat-card class="major">
+  <mat-card class="user">
     <mat-card-header>
+      <mat-card-title>
+          <mat-icon>person</mat-icon>
+      </mat-card-title>
       <mat-card-title *ngIf="user">{{ user.student_fullName }}</mat-card-title>
       <mat-card-subtitle *ngIf="user">{{ user.student_id | slice:1 }}</mat-card-subtitle>
-      <div *ngFor="let major of majors">
-        <mat-card-subtitle>{{ major.major_name }}</mat-card-subtitle>
-        <mat-card-subtitle class="faculty">{{ major.faculty_name }}</mat-card-subtitle>
-      </div>
     </mat-card-header>
   </mat-card>
 </div>
+
+<div *ngFor="let major of majors">
+  <div align="center" class="component">
+    <mat-card class="major">
+      <mat-card-header>
+        <mat-card-subtitle>{{ major.major_name }}</mat-card-subtitle>
+        <mat-card-subtitle class="faculty">{{ major.faculty_name }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+
