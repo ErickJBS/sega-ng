@@ -30,7 +30,6 @@ export class KardexComponent implements OnInit {
   }
 
   onLoad() {
-    console.log('[KardexComponent][onLoad]');
     this.data.getStudentKardex().subscribe(kardex => {
       this.kardex = kardex;
       this.average = this.getAverage();

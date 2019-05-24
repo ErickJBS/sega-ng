@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onLoad() {
-    console.log('[DashboardComponent][onLoad]');
     this.data.getStudentInfo().subscribe(user => {
       this.user = user;
     });

@@ -18,7 +18,6 @@ export class ScheduleComponent implements OnInit {
 
   onLoad() {
     this.data.getStudentSchedule().subscribe(schedule => {
-      console.log(schedule);
       this.schedule = schedule;
     });
   }
