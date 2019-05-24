@@ -1,8 +1,8 @@
-<mat-card>
+<mat-card class="kardex">
   <mat-card-title>Kardex</mat-card-title>
 </mat-card>
 
-<mat-form-field>
+<mat-form-field class="classifier">
   <mat-label>Ordenar por</mat-label>
   <mat-select>
     <mat-option *ngFor="let classifier of classifiers" [value]="classifier.value">
@@ -11,35 +11,38 @@
   </mat-select>
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <!-- Matricula Column -->
-  <ng-container matColumnDef="student_id">
-      <th mat-header-cell *matHeaderCellDef> Matricula </th>
-      <td mat-cell *matCellDef="let element"> {{element.student_id}} </td>
-  </ng-container>
+<mat-card>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Matricula Column -->
+    <ng-container matColumnDef="student_id">
+        <th mat-header-cell *matHeaderCellDef> Matricula </th>
+        <td mat-cell *matCellDef="let element"> {{element.student_id}} </td>
+    </ng-container>
+      
+    <!-- Semestre Column -->
+    <ng-container matColumnDef="semester">
+      <th mat-header-cell *matHeaderCellDef> Semestre </th>
+      <td mat-cell *matCellDef="let element"> {{element.semester}} </td>
+    </ng-container>
+
+    <!-- Materia Column -->
+    <ng-container matColumnDef="subject_id">
+      <th mat-header-cell *matHeaderCellDef> Materia </th>
+      <td mat-cell *matCellDef="let element"> {{element.subject_id}} </td>
+    </ng-container>
+
+    <!-- Grade Column -->
+    <ng-container matColumnDef="grade">
+      <th mat-header-cell *matHeaderCellDef> Calificación </th>
+      <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
-  <!-- Semestre Column -->
-  <ng-container matColumnDef="semester">
-    <th mat-header-cell *matHeaderCellDef> Semestre </th>
-    <td mat-cell *matCellDef="let element"> {{element.semester}} </td>
-  </ng-container>
+  </table>
 
-  <!-- Materia Column -->
-  <ng-container matColumnDef="subject_id">
-    <th mat-header-cell *matHeaderCellDef> Materia </th>
-    <td mat-cell *matCellDef="let element"> {{element.subject_id}} </td>
-  </ng-container>
-
-  <!-- Grade Column -->
-  <ng-container matColumnDef="grade">
-    <th mat-header-cell *matHeaderCellDef> Calificación </th>
-    <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-</table>
-
-<h2>Promedio General</h2>
+  <mat-card-subtitle class="promedio">Promedio General:</mat-card-subtitle>
+</mat-card>

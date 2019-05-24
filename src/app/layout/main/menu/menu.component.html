@@ -1,11 +1,19 @@
-<mat-card class="content">
-    <button mat-button [routerLink]="['/sega']" [matMenuTriggerFor]="dashboardMenu">Home</button>
-    <mat-menu #dashboardMenu="matMenu" yPosition="above"></mat-menu>
-        
-    <button mat-button [routerLink]="['/kardex']" [matMenuTriggerFor]="kardexMenu">Kardex</button>
-    <mat-menu #kardexMenu="matMenu" yPosition="above"></mat-menu>
-        
-    <button mat-button [routerLink]="['/schedule']" [matMenuTriggerFor]="scheduleMenu">Horario</button>
-    <mat-menu #scheduleMenu="matMenu" yPosition="above"></mat-menu>
+<div class="sticky">
+    <mat-toolbar >
+        <button mat-button [routerLink]="['/sega']" [matMenuTriggerFor]="dashboardMenu">
+            <mat-icon>home</mat-icon>
+        </button>
+        <mat-menu #dashboardMenu="matMenu" yPosition="above"></mat-menu>
+            
+        <button mat-button [routerLink]="['/kardex']" [matMenuTriggerFor]="kardexMenu">Kardex</button>
+        <mat-menu #kardexMenu="matMenu" yPosition="above"></mat-menu>
+            
+        <button mat-button [routerLink]="['/schedule']" [matMenuTriggerFor]="scheduleMenu">Horario</button>
+        <mat-menu #scheduleMenu="matMenu" yPosition="above"></mat-menu>
+        <span class="flex-spacer"></span>
 
-</mat-card>
+        <button mat-button [routerLink]="['/login']" [matMenuTriggerFor]="dashboardMenu">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>

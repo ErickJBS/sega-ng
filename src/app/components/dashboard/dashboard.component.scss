@@ -1,10 +1,15 @@
 .major {
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
+    max-width: fit-content;
+    text-align: center;
+    display : flex;
 }
 
 .faculty{
-    align-content: center;
+    color: black;
 }
+
+.component{
+    padding-top: 15px;
+}
+
   

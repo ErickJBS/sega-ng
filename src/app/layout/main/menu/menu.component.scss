@@ -1,5 +1,7 @@
-.content {
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    
 }
