@@ -33,8 +33,9 @@ export class AuthService {
   signOut(): void {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    this.token = null;
     this.currentUserSubject.next(null);
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   getUser() {
