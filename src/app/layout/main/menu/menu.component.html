@@ -1,19 +1,9 @@
 <div class="sticky">
     <mat-toolbar >
-        <button mat-button [routerLink]="['/sega']" [matMenuTriggerFor]="dashboardMenu">
-            <mat-icon>home</mat-icon>
-        </button>
-        <mat-menu #dashboardMenu="matMenu" yPosition="above"></mat-menu>
-
-        <button mat-button [routerLink]="['/kardex']" [matMenuTriggerFor]="kardexMenu">Kardex</button>
-        <mat-menu #kardexMenu="matMenu" yPosition="above"></mat-menu>
-
-        <button mat-button [routerLink]="['/schedule']" [matMenuTriggerFor]="scheduleMenu">Horario</button>
-        <mat-menu #scheduleMenu="matMenu" yPosition="above"></mat-menu>
+        <button mat-button [routerLink]="['/sega']"><mat-icon>home</mat-icon></button>
+        <button mat-button [routerLink]="['/kardex']">Kardex</button>
+        <button mat-button [routerLink]="['/schedule']">Horario</button>
         <span class="flex-spacer"></span>
-
-        <button mat-button (click)="onSignOut()" [matMenuTriggerFor]="dashboardMenu">
-            <mat-icon>exit_to_app</mat-icon>
-        </button>
+        <button mat-button (click)="onSignOut()"><mat-icon>exit_to_app</mat-icon></button>
     </mat-toolbar>
 </div>
