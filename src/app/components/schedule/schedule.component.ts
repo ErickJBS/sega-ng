@@ -9,6 +9,7 @@ import { DataService } from '@services/data.service';
 export class ScheduleComponent implements OnInit {
 
   schedule: any[];
+  dailySchedule: any[] = [];
 
   constructor(private data: DataService) { }
 
@@ -19,10 +20,18 @@ export class ScheduleComponent implements OnInit {
   onLoad() {
     this.data.getStudentSchedule().subscribe(schedule => {
       this.schedule = schedule;
+      this.filterSchedule();
     });
   }
 
-  filterSchedule(day: number) {
+  filterSchedule() {
+    for (let i = 1; i <= 7; i++) {
+      const c = this.filterScheduleByDay(i);
+      this.dailySchedule.push(c);
+    }
+  }
+
+  filterScheduleByDay(day: number) {
     if (!this.schedule) return;
     return this.schedule.filter(item => item.day === day);
   }

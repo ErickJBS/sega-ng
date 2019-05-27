@@ -1,16 +1,81 @@
-<mat-card class="horario">
-  <mat-card-title>Horario</mat-card-title>
-</mat-card>
+<div class="container" fxLayout="column" fxLayoutWrap>
+  <mat-card class="page-title">
+    <mat-card-title>Horario</mat-card-title>
+  </mat-card>
 
-<mat-list>
-  <!--h3 mat-subheader>Sábado</h3-->
-  <mat-list-item *ngFor="let item of schedule">
-    <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
-    <h4 mat-line>{{ item.subject_name }}</h4>
-    <p mat-line> {{ item.salon_id }} </p>
-    <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
-    <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
-  </mat-list-item>
-  <!--mat-divider></mat-divider-->
+  <div class="container" fxLayout="row" fxLayoutWrap fxLayoutAlign="center">
+    <mat-list class="mat-elevation-z1 schedule-content" fxFlex.gt-sm="80">
 
-</mat-list>
+      <h3 mat-subheader *ngIf="dailySchedule[0]?.length > 0">Lunes</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[0]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[0]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[1]?.length > 0">Martes</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[1]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[1]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[2]?.length > 0">Miércoles</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[2]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[2]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[3]?.length > 0">Jueves</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[3]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[3]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[4]?.length > 0">Viernes</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[4]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[4]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[5]?.length > 0">Sabado</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[5]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[5]?.length > 0"></mat-divider>
+
+      <h3 mat-subheader *ngIf="dailySchedule[6]?.length > 0">Domingo</h3>
+      <mat-list-item *ngFor="let item of dailySchedule[6]">
+        <mat-icon mat-list-icon [style.color]="getColor(item)">brightness_1</mat-icon>
+        <h4 mat-line>{{ item.subject_name }}</h4>
+        <p mat-line> {{ item.salon_id }} </p>
+        <button mat-stroked-button color="primary" class="button">{{ item.hour }}:00</button>
+        <button mat-stroked-button color="primary"class="button">{{ item.hour + item.duration }}:00</button>
+      </mat-list-item>
+      <mat-divider *ngIf="dailySchedule[6]?.length > 0"></mat-divider>
+    </mat-list>
+  </div>
+
+</div>
