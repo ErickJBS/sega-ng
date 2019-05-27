@@ -1,8 +1,8 @@
 <div class="sticky">
     <mat-toolbar class="toolbar">
-        <button mat-button [routerLink]="['/sega']"><mat-icon>home</mat-icon></button>
-        <button mat-button [routerLink]="['/kardex']">Kardex</button>
-        <button mat-button [routerLink]="['/schedule']">Horario</button>
+        <button mat-button [routerLink]="['/sega']" routerLinkActive="active"><mat-icon>home</mat-icon></button>
+        <button mat-button [routerLink]="['/kardex']" routerLinkActive="active">Kardex</button>
+        <button mat-button [routerLink]="['/schedule']" routerLinkActive="active">Horario</button>
         <span class="flex-spacer"></span>
         <button mat-button (click)="onSignOut()"><mat-icon>exit_to_app</mat-icon></button>
     </mat-toolbar>
