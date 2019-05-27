@@ -1,21 +1,19 @@
+%dashboard-card {
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  margin-top: 15px
+}
+
 .major {
-    max-width: fit-content;
-    text-align: center;
-    display : flex;
-}
-
-.faculty{
-    color: black;
-}
-
-.component{
-    padding-top: 15px;
+  @extend %dashboard-card;
 }
 
 .user {
-    padding-top: 2%;
-    max-width: fit-content;
-    text-align: center;
-    display : flex;
-    background-color: #efebf7
+  @extend %dashboard-card;
+  background-color: #efebf7;
+}
+
+.faculty-name {
+  color: black;
 }
