@@ -1,23 +1,16 @@
-table {
-    width: 100%;
-  }
-
-.kardex{
-    background-color: #f5f5f5;
-  }
-
-.classifier{
-  padding-top: 30px;
-  padding-left: 15px;
-
+.page-title {
+  background-color: #f5f5f5;
 }
 
-.promedio{
-  padding-top: 30px;
-  padding-bottom: 5px;
-  color: #2b2121;
+.kardex-content {
+  margin: 16px;
+  flex: auto;
 }
 
-.content-card {
-  margin: 8px;
+.average-text {
+  font-weight: bolder;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
 }

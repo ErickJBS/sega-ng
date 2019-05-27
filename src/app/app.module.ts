@@ -28,11 +28,12 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select'; 
-import { MatTableModule } from '@angular/material/table'; 
-import { MatListModule } from '@angular/material/list'; 
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { MatListModule } from '@angular/material/list';
     MatSnackBarModule,
     FormsModule,
     HttpClientModule,
+    MatSortModule
   ],
   providers: [
     AuthService,

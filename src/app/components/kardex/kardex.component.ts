@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '@services/data.service';
-
-/*export interface Classifier {
-  value: string;
-  viewValue: string;
-}*/
+import { MatSort, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-kardex',
@@ -15,13 +11,9 @@ export class KardexComponent implements OnInit {
 
   kardex: any[];
   average: any;
+  dataSource: MatTableDataSource<{}>;
   displayedColumns: string[] = ['semester', 'subject_name', 'grade'];
-
-  /*classifiers: Classifier[] = [
-    { value: 'semester-0', viewValue: 'Semestre' },
-    { value: 'grade-1', viewValue: 'Calificacion' },
-    { value: 'subject-2', viewValue: 'Materia' }
-  ];*/
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private data: DataService) { }
 
@@ -33,6 +25,8 @@ export class KardexComponent implements OnInit {
     this.data.getStudentKardex().subscribe(kardex => {
       this.kardex = kardex;
       this.average = this.getAverage();
+      this.dataSource = new MatTableDataSource(this.kardex);
+      this.dataSource.sort = this.sort
     });
   }
 
